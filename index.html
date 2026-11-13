@@ -84,7 +84,7 @@ async function loadCloudActivities(user){
     }
     const a=snapshot.data();
     if(typeof a.name!=='string'||!a.name.trim()||a.name.length>80||!Number.isSafeInteger(a.points)||a.points<0||a.points>10000||typeof a.active!=='boolean'){
-      activityStatus.textContent='La actividad de Firebase tiene campos inválidos. Se conserva la muestra local.';
+      activityStatus.textContent='Tipos: '+typeof a.name+' / '+typeof a.points+' / '+typeof a.active+'; puntos='+String(a.points);a
       return;
     }
     const others=tasks.filter(t=>t.id!=='welcome');
